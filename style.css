@@ -1,17 +1,65 @@
+body {
+    background-color: #243e49;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #1e333a;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+}
+
+.instructions{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+}
+
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 6.25rem);
     margin: auto;
-    margin-top: 50px;
-    width: 310px;
+    width: 18.75rem;
+    padding: 0.625rem;
+    background-color: #1e333a;
+    border-radius: 0.3125rem;
 }
 
 .cell {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    border: 3px solid black;
-    height: 100px;
+    font-size: 1.5rem;
+    border: 0.1875rem solid black;
+    height: 6.25rem;
     cursor: pointer;
+    background-color: white;
+}
+
+.cell:hover {
+    background-color: #7bc8d4;
+}
+
+.reset-button {
+    display: block;
+    margin: auto;
+    margin-top: 1.25rem;
+    background-color: #4f7b82;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #6b979e;
 }

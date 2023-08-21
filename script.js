@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderBoard();
                 const winner = checkWinner();
                 if (winner) {
-                    console.log(`${winner} wins!`);
+                    alert(`${winner} wins!`);
                     gameOver = true;
                 } else {
                     switchPlayers();
