@@ -10,6 +10,13 @@ const player1 = Player("Player 1", "X");
 const player2 = Player("player 2", "O");
 
 document.addEventListener('DOMContentLoaded', function () {
+    const resetButton = document.querySelector(".reset-button");
+    resetButton.addEventListener('click', () => {
+        gameBoard.resetBoard();
+        gameBoard.renderBoard();
+        // gameBoard.gameIsOver = false;
+    })
+
     // Gameboard Module
     const gameBoard = (() => {
         let board = ["", "", "", "", "", "", "", "", ""];
@@ -27,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const resetBoard = () => {
             board = ["", "", "", "", "", "", "", "", ""];
+            currentPlayer = player1;
+            gameOver = false;
         };
 
         const renderBoard = () => {
@@ -68,7 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (let combo of winningCombos) {
                 const [a, b, c] = combo;
-                if (board[a] !== "" && board[a] === board[b] && board[b] === board[c]) return board[a];
+                if (board[a] !== "" && board[a] === board[b] && board[b] === board[c]) {
+                    gameOver = true;
+                    return board[a];
+                }
             }
             return null;
         };
